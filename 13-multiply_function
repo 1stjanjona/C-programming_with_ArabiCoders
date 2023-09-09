@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+float mult_two_nums(float x, float y);
+
+int main(void)
+{
+    float x;
+    float y;
+
+    printf("Enter x: ");
+    scanf("%f", &x);
+
+    printf("Enter y: ");
+    scanf("%f", &y);
+
+    float product = mult_two_nums(x, y);
+    printf("product of %f and %f is: %f\n", x, y, product);
+
+    return 0;
+}
+
+float mult_two_nums(float x, float y)
+{
+    float product = x * y;
+    return product;
+}

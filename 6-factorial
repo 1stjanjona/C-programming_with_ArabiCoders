@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+ /**
+    factorial of n (n!) =  1 * 2 * 3 * 4 * ......n
+    factorial of n! = n * (n-1) * (n-2) * (n-3) ....(n-(n-1))
+    5! = 5 * 4 * 3 * 2 * 1 = 120
+    */
+
+
+int main()
+{
+    int n;
+    int i;
+    int sum;
+    int avrg;
+
+    printf("Enter a number: ");
+   while (n != 0){
+
+        scanf("%d ", n);
+   }
+
+
+}

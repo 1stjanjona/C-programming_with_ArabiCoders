@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+float global = 0.5050;
+
+int main(void)
+{
+    triple();
+    printf("Tripled Global: %f\n", global);
+   // scanf("%f", &global);
+    return 0;
+}
+
+void triple(void)
+{
+    global *= 3;
+}

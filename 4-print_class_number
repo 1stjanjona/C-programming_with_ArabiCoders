@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int classes[200];
+    int i;
+
+    for (i = 10; i <= 20; i++){
+            classes[i] = i;
+        printf("class %d \n", classes[i]);
+    }
+
+    return 0;
+}

@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i;
+    int j;
+
+    printf("Enter your first number: ");
+    scanf("%d", &i);
+
+    printf("Enter your second number: ");
+    scanf("%d", &j);
+
+    while (i < j){
+
+        printf("%d, ", i);
+        i++;
+    }
+    return 0;
+}

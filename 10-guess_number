@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int guess = 5;
+
+    printf("What's your guess number: ");
+    scanf("%i", &guess);
+
+    if (guess != 5)
+    {
+        printf("Your guess number is wrong!");
+    }
+    else
+    {
+        printf("Your guess number is right!");
+    }
+    return 0;
+}
