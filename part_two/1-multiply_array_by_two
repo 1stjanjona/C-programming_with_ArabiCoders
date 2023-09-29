@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int rows = 3;
+    int cols = 5;
+    int i;
+    int j;
+
+     int original_array[3][5] = {
+        {1, 2, 3, 4, 5},
+        {10, 20, 30, 40, 50},
+        {100, 500, 900, 1000, 4000}
+    };
+
+
+    int new_array[3][5];
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            new_array[i][j] = 2 * original_array[i][j];
+        }
+    }
+
+    printf("Original Array:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            printf("%d ", original_array[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nNew Array (each element multiplied by 2):\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            printf("%d ", new_array[i][j]);
+        }
+        printf("\n");
+    }
+
+    return (0);
+}
