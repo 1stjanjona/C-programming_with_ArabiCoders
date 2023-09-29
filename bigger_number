@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int numDigits;
+    int i;
+    int number;
+    int bigger = 0;
+    int sum = 0;
+
+    printf("Enter the number of digits you want to store: ");
+    scanf("%d", &numDigits);
+
+    if (numDigits <= 0) {
+        printf("Please enter a positive number for the number of digits.\n");
+        return (1);
+    }
+
+    for (i = 1; i <= numDigits; ++i) {
+
+        printf("Enter digit %d: ", i);
+        scanf("%d", &number);
+
+        sum += number;
+
+        if (i == 1 || number > bigger) {
+            bigger = number;
+        }
+    }
+
+    double average = (double)sum / numDigits;
+
+    printf("Bigger number entered: %d\n", bigger);
+    printf("Sum of the numbers entered: %d\n", sum);
+    printf("Average of the numbers entered: %.2f\n", average);
+
+    return 0;
+}
