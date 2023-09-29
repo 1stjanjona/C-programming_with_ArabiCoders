@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_PIN_ATTEMPTS 3
+#define MAX_PUK_ATTEMPTS 8
+#define PIN_LENGTH 4
+#define PUK_LENGTH 12
+
+int main() {
+    char correctPin[PIN_LENGTH + 1] = "1234";
+    char enteredPin[PIN_LENGTH + 1];
+    char correctPuk[PUK_LENGTH + 1] = "123456789012";
+    char enteredPuk[PUK_LENGTH + 1];
+
+    int pinAttempts = 0;
+    int pukAttempts = 0;
+
+    while (1) {
+        printf("Enter your PIN: ");
+        scanf("%4s", enteredPin);
+
+        if (strcmp(enteredPin, correctPin) == 0) {
+            printf("Login successful!\n");
+            break;
+        } else {
+            pinAttempts++;
+
+            if (pinAttempts == MAX_PIN_ATTEMPTS) {
+                printf("Invalid PIN entered three times. Switching to PUK mode.\n");
+
+                while (1) {
+                    printf("Enter your PUK: ");
+                    scanf("%12s", enteredPuk);
+
+                    if (strcmp(enteredPuk, correctPuk) == 0) {
+                        printf("Login successful using PUK. Resetting PIN.\n");
+                        pinAttempts = 0;
+                        break;
+                    } else {
+                        pukAttempts++;
+
+                        if (pukAttempts == MAX_PUK_ATTEMPTS) {
+                            printf("Invalid PUK entered eight times. SIM card locked.\n");
+                            return 0;
+                        }
+
+                        printf("Invalid PUK. Try again. Attempts left: %d\n", MAX_PUK_ATTEMPTS - pukAttempts);
+                    }
+                }
+            } else {
+                printf("Invalid PIN. Try again. Attempts left: %d\n", MAX_PIN_ATTEMPTS - pinAttempts);
+            }
+        }
+    }
+
+    return 0;
+}
