@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main(void) {
+    int number;
+    int sum = 0;
+    int count = 0;
+
+    printf("Enter numbers (enter 0 to stop):\n");
+
+    while (1) {
+        printf("Enter a number: ");
+        scanf("%d", &number);
+
+        if (number == 0) {
+            break;
+        }
+
+        sum += number;
+        count++;
+    }
+
+    if (count == 0) {
+        printf("No numbers entered.\n");
+    } else {
+        double average = (double)sum / count;
+
+        printf("Sum of the entered numbers: %d\n", sum);
+        printf("Average of the entered numbers: %.2f\n", average);
+    }
+
+    return (0);
+}
